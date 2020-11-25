@@ -3,13 +3,13 @@ from app.data import models
 from typing import List
 from odmantic import AIOEngine, ObjectId
 from motor.motor_asyncio import AsyncIOMotorClient
-from app.config import config
+import os 
 
 router = APIRouter()
-settings = config.Settings()
+URI = os.environ['MONGO_URL']
 
 Hug = models.Hug
-client = AsyncIOMotorClient(settings.uri)
+client = AsyncIOMotorClient(URI)
 engine = AIOEngine(motor_client=client)
 
 @router.put("/hugs/", response_model=Hug, tags=["hugs"])

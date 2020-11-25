@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python -m uvicorn app.main:app --bind=0.0.0.0
+python -m uvicorn application:app --host 0.0.0.0
