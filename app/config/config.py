@@ -4,7 +4,7 @@ import os
 uri = os.environ['MONGO_URL']
 
 class Settings(BaseSettings):
-    uri: str
+    uri: str 
     
 
 
