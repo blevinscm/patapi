@@ -1,8 +1,11 @@
 from pydantic import BaseSettings
 import os
 
+uri = os.environ['MONGO_URL']
+
 class Settings(BaseSettings):
-    uri: db_server = os.environ['MONGO_URL']
+    uri: str
+    
 
 
 settings = Settings()
