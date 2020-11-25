@@ -3,10 +3,10 @@ from app.data import models
 from typing import List
 from odmantic import AIOEngine, ObjectId
 from motor.motor_asyncio import AsyncIOMotorClient
-import os 
+import os
 
 router = APIRouter()
-URI = os.environ['MONGO_URL']
+URI = os.environ["MONGO_URL"]
 
 Hug = models.Hug
 client = AsyncIOMotorClient(URI)
