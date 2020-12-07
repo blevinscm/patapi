@@ -1,5 +1,4 @@
 from fastapi import requests
-from app.routers.hugs import Hug
 from fastapi import Request, FastAPI, Header, HTTPException
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
