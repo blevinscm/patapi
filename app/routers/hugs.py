@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from app.data import models
+from ..data import models
 from typing import List
 from odmantic import AIOEngine, ObjectId
 from motor.motor_asyncio import AsyncIOMotorClient
