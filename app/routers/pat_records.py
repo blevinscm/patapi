@@ -12,7 +12,7 @@ client = AsyncIOMotorClient(URI)
 engine = AIOEngine(motor_client=client, database="pat_records")
 
 @router.put("/record/", response_model=Record, tags=["Record Add"])
-async def new_hug(record: Record):
+async def new_record(record: Record):
     '''
     Add a record to the Database.
     Delete the objectID from the example if using 
@@ -24,7 +24,7 @@ async def new_hug(record: Record):
     return record
 
 
-@router.get("/records/", response_model=List[Record], tags=["Record Retrival"])
+@router.get("/records/", response_model=List[Record], tags=["Record Retrieval"])
 async def get_records():
     '''
     Get all the records from the database.

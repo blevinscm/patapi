@@ -1,0 +1,9 @@
+site_name: PAT API
+theme:
+  name: material
+  features:
+    - navigation.instant
+  palette:
+    scheme: slate
+    primary: light blue
+    accent: green
