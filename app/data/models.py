@@ -71,7 +71,7 @@ class Entry (Model):
             "example": {
                 "appID" : "00000001",
                 "entry_type" : "Incident",
-                "entry_date" : 2020-1-1,
+                "entry_date" : "2020-1-1",
                 "journal_entry" : "This is a jouurnal entry which is an optional field and free form text entry",
                 "trauma_entry" : "This is a trauma entry which is just like a journal entry, but flagged as a traumatic event to make it easier to share with a healthcare provider.",
                 "incident_severity" : 3,
