@@ -9,7 +9,7 @@ tags_metadata = [
         "description": "API to interact with PAT API data",
         "externalDocs": {
             "description": "Administrator Landing.",
-            "url": "http://localhost:8000",
+            "url": "https://aka.ms/pathack",
         },
     },
   
