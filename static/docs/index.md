@@ -11,7 +11,7 @@ This site is for PAT API Administrators. If you are a developer please go to the
 
 ## About PAT
 
-This project is building a service that a PTSD sufferer can use to talk about their feelings and can receive data driven feedback for coping with PTSD. The service allows the customer to record their emotions, flashbacks, incidents, nightmares in a journal that they can then choose to share with their mental health professional. Being able to get the emotions and thoughts out with the added benefit of being able to share with their mental health provider will be of a great service. 
+The PAT project team is building a service that a PTSD sufferer can use to talk about their feelings, incidents, and traumatic experiences in a safe and private manner.  Users can receive data driven feedback for coping with PTSD based on their entries. The service allows the user to record a traumatic experience, general journal entry, or an incident with a PTSD specific conversational canvas.
 
 ## Data Privacy 
 

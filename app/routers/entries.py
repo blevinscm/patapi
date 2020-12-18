@@ -7,12 +7,12 @@ from motor.motor_asyncio import AsyncIOMotorClient
 router = APIRouter()
 URI = 'mongodb://pat-mongo:hkFhaUPLqi52ZpHpOpzrHhrLvE2efpEwg0MBRSBYVcYgPZYVkztFb8bfvbpRqZdcT1SqjdZqUmMcJp0UTfTrtg==@pat-mongo.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@pat-mongo@'
 
-Record = models.Record
+Entry = models.Entry
 client = AsyncIOMotorClient(URI)
-engine = AIOEngine(motor_client=client, database="pat_records")
+engine = AIOEngine(motor_client=client, database="pat_entries")
 
-@router.put("/record/", response_model=Record, tags=["Record Add"])
-async def new_record(record: Record):
+@router.put("/entry/", response_model=Entry, tags=["Entry Add/Edit"])
+async def new_entry(entry: Entry):
     '''
     Add a record to the Database.
     Delete the objectID from the example if using 
@@ -20,36 +20,36 @@ async def new_record(record: Record):
     Use to add or edit an item in the DB. Do not use Post
     when using MongoDB.
     '''
-    await engine.save(record)
-    return record
+    await engine.save(entry)
+    return entry
 
 
-@router.get("/records/", response_model=List[Record], tags=["Record Retrieval"])
-async def get_records():
+@router.get("/entries/", response_model=List[Entry], tags=["Entry Retrieval"])
+async def get_entries():
     '''
-    Get all the records from the database.
+    Get all the entries from the database.
     Used to get a list of the items in the database.
     '''
-    records = await engine.find(Record)
-    return records
+    entries = await engine.find(Entry)
+    return entries
 
 
-@router.get("/records/count", response_model=int, tags=["Record Retrieval"])
-async def count_records():
+@router.get("/entries/count", response_model=int, tags=["Entry Retrieval"])
+async def count_entries():
     '''
     Count all the records in the database.
     Useful for determining pagination, optimizations.
     '''
-    count = await engine.count(Record)
+    count = await engine.count(Entry)
     return count
 
 
-@router.get("/records/{id}", response_model=Record, tags=["Record Retrieval"])
-async def get_record_by_id(id: ObjectId):
+@router.get("/entries/{id}", response_model=Entry, tags=["Entry Retrieval"])
+async def get_entry_by_id(id: ObjectId):
     '''
     Find a specific record by ID.
     '''
-    record = await engine.find_one(Record, Record.id == id)
-    if record is None:
+    entry = await engine.find_one(Entry, Entry.id == id)
+    if entry is None:
         raise HTTPException(404)
-    return record
+    return entry

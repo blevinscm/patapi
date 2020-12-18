@@ -1,17 +1,15 @@
-from .routers import pat_records
-from fastapi import requests
+from .routers import entries
 from fastapi import Request, FastAPI, Header, HTTPException
-from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
 
 tags_metadata = [
     {
-        "name": "Records",
+        "name": "PAT Entries",
         "description": "API to interact with PAT API data",
         "externalDocs": {
-            "description": "PAT project site.",
-            "url": "https://aka.ms/pathack",
+            "description": "Administrator Landing.",
+            "url": "http://localhost:8000",
         },
     },
   
@@ -19,13 +17,13 @@ tags_metadata = [
 
 app = FastAPI(
     openapi_tags=tags_metadata,
-    title="PAT Records API",
-    description="This is an example for the base project Generator",
+    title="PAT API",
+    description="API to interact with the Document Database in Azure Cosmos DB",
     version="v0.0.1",
 
 )
 
 
-app.include_router(pat_records.router)
+app.include_router(entries.router)
 
 app.mount("/", StaticFiles(directory="static/site", html= True), name="static")
