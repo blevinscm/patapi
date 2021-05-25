@@ -18,7 +18,7 @@ tags_metadata = [
 app = FastAPI(
     openapi_tags=tags_metadata,
     title="PAT API",
-    description="API to interact with the Document Database in Azure Cosmos DB",
+    description="API to interact with the Document Database in Azure Cosmos DB or other noSQL stores.",
     version="v0.0.1",
 
 )
