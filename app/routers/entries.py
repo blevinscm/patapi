@@ -5,8 +5,7 @@ from odmantic import AIOEngine, ObjectId
 from motor.motor_asyncio import AsyncIOMotorClient
 
 router = APIRouter()
-URI = 'mongodb://pat-mongo:hkFhaUPLqi52ZpHpOpzrHhrLvE2efpEwg0MBRSBYVcYgPZYVkztFb8bfvbpRqZdcT1SqjdZqUmMcJp0UTfTrtg==@pat-mongo.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@pat-mongo@'
-
+URI = <>
 Entry = models.Entry
 client = AsyncIOMotorClient(URI)
 engine = AIOEngine(motor_client=client, database="pat_entries")
